@@ -90,7 +90,7 @@ except ImportError:
 # Take a look at http://www.python.org/dev/peps/pep-0386/
 # for a consistent versioning pattern.
 
-PSYCOPG_VERSION = '2.6.2'
+PSYCOPG_VERSION = '2.6.2-a9'
 
 version_flags   = ['dt', 'dec']
 
@@ -410,7 +410,7 @@ class psycopg_build_ext(build_ext):
                 pgversion = "7.4.0"
 
             verre = re.compile(
-                r"(\d+)\.(\d+)(?:(?:\.(\d+))|(devel|(alpha|beta|rc)\d+))")
+                r"(\d+)\.(\d+)(?:(?:\.(\d+))|(devel|(alpha|beta|rc)\d+))?")
             m = verre.match(pgversion)
             if m:
                 pgmajor, pgminor, pgpatch = m.group(1, 2, 3)
